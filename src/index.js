@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import SeasonDisplay from './SeasonDisplay'
 
 class App extends Component {
+  /*
   constructor(props) {
     // super call is compulsory
     super(props)
@@ -14,6 +15,14 @@ class App extends Component {
       long: null,
       errorMessage: ''
     }
+  }
+  */
+
+  // Alternative way to initialize state without using constructor
+  state = {
+    lat: null,
+    long: null,
+    errorMessage: ''
   }
 
   // API calls or data fetching shall be put inside this lifecycle methood (usually)
