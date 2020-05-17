@@ -14,7 +14,10 @@ class App extends Component {
       long: null,
       errorMessage: ''
     }
+  }
 
+  // API calls or data fetching shall be put inside this lifecycle methood (usually)
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         // Always use setState to update state object
@@ -45,7 +48,7 @@ class App extends Component {
         </div>
       )
     }
-    
+
     return <div>Loading...</div>
   }
 }
