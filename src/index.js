@@ -11,7 +11,8 @@ class App extends Component {
     // Initialize state
     this.state = {
       lat: null,
-      long: null
+      long: null,
+      errorMessage: ''
     }
 
     window.navigator.geolocation.getCurrentPosition(
@@ -22,7 +23,11 @@ class App extends Component {
           long: position.coords.longitude
         })
       },
-      (error) => console.log(error)
+      (error) => {
+        this.setState({
+          errorMessage: error.message
+        })
+      }
     )
   }
 
@@ -32,6 +37,7 @@ class App extends Component {
       <div>
         <div>Latitude: { this.state.lat }</div>
         <div>Longitude: { this.state.long }</div>
+        <div>Error: { this.state.errorMessage }</div>
       </div>
     )
   }
