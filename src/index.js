@@ -33,13 +33,20 @@ class App extends Component {
 
   // render method is a must have in React class component
   render() {
-    return (
-      <div>
-        <div>Latitude: { this.state.lat }</div>
-        <div>Longitude: { this.state.long }</div>
-        <div>Error: { this.state.errorMessage }</div>
-      </div>
-    )
+    if (this.state.errorMessage && (!this.state.lat && !this.state.long)) {
+      return <div>Error: { this.state.errorMessage }</div>
+    }
+
+    if (!this.state.errorMessage && (this.state.lat && this.state.long)) {
+      return (
+        <div>
+          <div>Latitude: { this.state.lat }</div>
+          <div>Longitude: { this.state.long }</div>
+        </div>
+      )
+    }
+    
+    return <div>Loading...</div>
   }
 }
 
