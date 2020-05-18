@@ -44,8 +44,7 @@ class App extends Component {
     )
   }
 
-  // render method is a must have in React class component
-  render() {
+  renderContent() {
     if (this.state.errorMessage && (!this.state.lat && !this.state.long)) {
       return <div>Error: { this.state.errorMessage }</div>
     }
@@ -57,6 +56,11 @@ class App extends Component {
     }
 
     return <Spinner message="Please accept location request..." />
+  }
+
+  // render method is a must have in React class component
+  render() {
+    return this.renderContent()
   }
 }
 
