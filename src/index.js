@@ -56,7 +56,7 @@ class App extends Component {
       )
     }
 
-    return <Spinner />
+    return <Spinner message="Please accept location request..." />
   }
 }
 
