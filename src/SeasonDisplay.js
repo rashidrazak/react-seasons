@@ -1,8 +1,14 @@
 import React from 'react'
 
-const SeasonDisplay = () => {
+const SeasonDisplay = (props) => {
+  // Use object destructuring
+  const {lat, long} = props
+
   return (
-    <div>Season Display</div>
+    <div>
+      <div>Latitude: {lat}</div>
+      <div>Longitude: {long}</div>
+    </div>
   )
 }
 
